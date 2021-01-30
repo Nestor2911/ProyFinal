@@ -1,0 +1,59 @@
+@import 'typography';
+@mixin breakpointShoppingCart ($breakpoint) {
+
+  @if ($breakpoint == lg) {
+    @media (max-width: map-get($breakpoints, lg )) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == md) {
+    @media (max-width: map-get($breakpoints, md )) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == sm) {
+    @media (max-width: map-get($breakpoints, sm )) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == xs) {
+    @media (max-width:map-get($breakpoints, xs )) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpointPasarela($breakpoint){
+  @if ($breakpoint == lg) {
+    @media (max-width: map-get($breakpoints, lg )) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == md) {
+    @media (max-width: map-get($breakpoints, md )) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == sm) {
+    @media (max-width: map-get($breakpoints, sm )) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == xs) {
+    @media (max-width:map-get($breakpoints, xs )) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == xl){
+   @media (min-width: map-get($breakpoints, xl )) {
+     @content;
+   }
+  }
+}
