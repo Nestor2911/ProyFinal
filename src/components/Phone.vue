@@ -28,6 +28,7 @@
                         <li class="item-form-select">Desarrollo de Videojuegos</li>
                     </ul>
                 </div>
+                </select>
                 <label class="check-label" for="check">
                     <input class="check-input" type="checkbox" value="false">
                     Acepto las
