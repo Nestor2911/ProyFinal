@@ -55,19 +55,28 @@ export default {
     },
     async postRegister({ commit }, payload) {
       try {
-        const registerResponse = await fetch(
-          "https://stormy-tor-89354.herokuapp.com/api/cliente/",
-          {
-            method: "POST",
-            body: JSON.stringify(payload),
-            headers: {
-              "content-Type": "application/json",
-            },
-          }
-        ).then((response) => response.json());
-        commit("SET_ERROR_LOADED", false);
-        alert(`${registerResponse.nombre} se ha registado satisfactoriamente`);
-        router.push("/auth/login");
+        fetch("https://stormy-tor-89354.herokuapp.com/api/cliente/", {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "content-Type": "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.status !== 201) {
+              alert("error");
+            } else if (response.status == 201) {
+              return response.json();
+            }
+          })
+          .then((response) => {
+            alert(`${response.username} se ha registado satisfactoriamente`);
+            commit("SET_ERROR_LOADED", false);
+            router.push("/auth/login");
+          })
+          .catch((e) => {
+            console.log("%O", e);
+          });
       } catch (e) {
         commit("SET_ERROR_LOADED", true);
       }
