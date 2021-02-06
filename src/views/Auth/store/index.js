@@ -21,14 +21,14 @@ export default {
   },
   actions: {
     async postLogin({ commit }, payload) {
-      console.log("api logueo", payload);
+      //console.log("api logueo", payload);
       try {
         const form = new FormData();
         form.append("username", payload.username);
         form.append("password", payload.password);
 
         const loginResponse = await fetch(
-          "https://backendhackatonfinal.herokuapp.com/api/token/",
+          "https://stormy-tor-89354.herokuapp.com/api/token/",
           {
             method: "POST",
             body: form,
@@ -56,7 +56,7 @@ export default {
     async postRegister({ commit }, payload) {
       try {
         const registerResponse = await fetch(
-          "https://backendhackatonfinal.herokuapp.com/cliente/",
+          "https://stormy-tor-89354.herokuapp.com/api/cliente/",
           {
             method: "POST",
             body: JSON.stringify(payload),

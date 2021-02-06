@@ -9,7 +9,7 @@
 				</div>
 				<div @click="getModalB" class="listItem">
 					<router-link to="/pago/carrito-de-compras">
-						Carito de compra
+						Carrito de compra
 					</router-link>
 				</div>
 				<div @click="getModalB" class="listItem">

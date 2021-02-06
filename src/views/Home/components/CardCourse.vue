@@ -7,7 +7,7 @@
 			<div class="container-cursos__list">
 				<div class="curso" v-for="(product, index) in products" :key="index">
 					<figure>
-						<img :src="product.imagen_card" class="img-cursos" />
+						<img :src="product.imagen_card" class="img-cursos" />					
 						<button class="curso-add" @click.once="addProduct(product)">
 							AGREGAR
 						</button>

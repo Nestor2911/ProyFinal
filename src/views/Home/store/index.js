@@ -109,9 +109,10 @@ export default {
     async getProducts({ commit }) {
       try {
         const products = await fetch(
-          "https://backendhackatonfinal.herokuapp.com/producto/"
+          "https://stormy-tor-89354.herokuapp.com/api/producto/"
         ).then((response) => response.json());
         commit("SET_ERROR_LOADED", false);
+        console.log(products);
         commit("SET_PRODUCTS", products);
       } catch (error) {
         commit("SET_ERROR_LOADED", true);
@@ -139,7 +140,7 @@ export default {
     async getProducto({ commit }, id) {
       try {
         const producto = await fetch(
-          `https://backendhackatonfinal.herokuapp.com/producto/${id}`
+          `https://stormy-tor-89354.herokuapp.com/api/producto/${id}`
         ).then((response) => response.json());
         commit("SET_ERROR_LOADED", false);
         commit("SET_PRODUCTO", producto);
@@ -150,7 +151,7 @@ export default {
     async getCupon({ commit }, payload) {
       try {
         const cupon = await fetch(
-          `https://backendhackatonfinal.herokuapp.com/cupon/?codigo=${payload}`,
+          `https://stormy-tor-89354.herokuapp.com/api/cupon/?codigo=${payload}`,
           {
             method: "GET",
             // body: JSON.stringify(payload),
